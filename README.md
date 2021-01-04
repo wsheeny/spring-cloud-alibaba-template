@@ -72,14 +72,23 @@
 
 ## 预览
 
-- Nacos：
+- Nacos服务注册发现：
 
-  ![nacos](./doc/nacos.png)
+  - Nacos动态配置
+  ![Nacos配置](doc/nacos-config.png)
 
-- Skywalking:
+  - Nacos服务注册
+  ![Nacos服务](doc/nacos-server.png)
 
-  ![skywalking](./doc/skywalking.png)
+- Skywalking链路追踪:
 
-  ![skywalking](./doc/skywlking2.png)
+  - 仪表盘
+  ![仪表盘](./doc/skywalking.png)
+
+  - 拓扑图
+  ![拓扑图](./doc/skywalking2.png)
+  
+  - 追踪
+  ![追踪](./doc/skywalking3.png)
 
 
