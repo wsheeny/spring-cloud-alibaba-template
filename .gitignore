@@ -32,3 +32,4 @@ build/
 .vscode/
 /**/.mvn/
 /tiny-commons/.mvn
+/tiny-skywalking/agent/logs/skywalking-api.log
