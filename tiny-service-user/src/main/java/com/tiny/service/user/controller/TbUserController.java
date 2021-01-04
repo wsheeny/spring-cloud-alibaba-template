@@ -33,6 +33,7 @@ public class TbUserController {
     @GetMapping(value = {"{id}"})
     public String reg(@PathVariable String id) {
         TbUserEntity tbUser = tbUserMapper.selectById(id);
+        // int i = 1 / 0; 模拟 skywalking
         return tbUser.getUsername();
     }
 }

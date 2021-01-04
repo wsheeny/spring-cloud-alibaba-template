@@ -90,5 +90,8 @@
   
   - 追踪
   ![追踪](./doc/skywalking3.png)
+    
+  - 错误
+  ![错误](./doc/skywalking-error.png)
 
 
