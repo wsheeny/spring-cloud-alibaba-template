@@ -1,32 +1,34 @@
 ## 介绍
 
-`Spring-cloud-alibaba-template` 是一套微服务脚手架，采用了 `Spring Cloud Hoxton` & `Alibaba` 、`Spring Boot 2.3` 、`Oauth2` 、`MyBatis`
-、`Docker`、`Elasticsearch` 等核心技术， 同时提供了基于 `Vue` 的管理后台方便快速搭建系统。`template` 在通用业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。
+`Spring-cloud-alibaba-template` 是一套微服务脚手架，采用了 `Spring Cloud Hoxton` & `Alibaba` 
+、`Spring Boot 2.4.1` 、`MyBatis`
+、`Elasticsearch` 等核心技术， 同时提供了基于 `Vue` 的管理后台方便快速搭建系统。
+在通用业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。
 
 ## 组织结构
 
-- ~~template-dependencies~~：统一的依赖管理
-- `template-commons`：通用的工具类库
-- `template-commons-domain`：通用的领域模型
-- `template-commons-mapper`：通用的数据访问
-- `template-commons-service`：通用的业务逻辑
-- `template-generator`：通用的代码生成
-- `template-external-skywalking`：外部的链路追踪
-- `template-gateway`：路由网关统一访问接口
-- `template-search`：Elasticsearch全文检索
+- ~~tiny-dependencies~~：统一的依赖管理
+- `tiny-commons`：通用的工具类库
+- `tiny-commons-domain`：通用的领域模型
+- `tiny-commons-mapper`：通用的数据访问
+- `tiny-commons-service`：通用的业务逻辑
+- `tiny-generator`：通用的代码生成
+- `tiny-external-skywalking`：外部的链路追踪
+- `tiny-gateway`：路由网关统一访问接口
+- `tiny-service-search`：Elasticsearch全文检索
 
 ## 服务规划
 
 |服务|端口|说明|
 |---|---|---|
-|template-gateway       |9000|路由网关统一访问接口|
-|template-search        |9502|全文检索|
-|template-service-user  |9501|用户相关服务|
+|tiny-gateway       |9000|路由网关统一访问接口|
+|tiny-search        |9502|全文检索|
+|tiny-service-user  |9501|用户相关服务|
 |···|···|···|
 
 ## 项目演示
 
-[template-demo](http://47.105.186.18)
+[tiny-demo](http://47.105.186.18)
 
 ## 技术选型
 

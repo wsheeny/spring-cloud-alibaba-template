@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.7.RELEASE</version>
+        <version>2.3.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.knox</groupId>
+    <groupId>com.tiny</groupId>
     <artifactId>spring-cloud-alibaba-template</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
 
     <name>spring-cloud-alibaba-template</name>
-    <description>Dependencies For Spring-Cloud-Alibaba</description>
+    <description>统一的依赖管理</description>
 
     <developers>
         <developer>
@@ -27,17 +27,20 @@
 
     <modules>
         <!--通用-->
-        <module>template-commons-domain</module>
-        <module>template-commons-mapper</module>
-        <module>template-commons-service</module>
-        <module>template-commons</module>
-        <module>template-canal</module>
-        <module>template-mbg</module>
-        <module>template-gateway</module>
-        <module>template-search</module>
+        <module>tiny-commons</module>
+        <module>tiny-commons-mapper</module>
+        <module>tiny-commons-domain</module>
+        <!--canal增量更新-->
+        <module>tiny-canal</module>
+        <!--代代码生成-->
+        <module>tiny-mbg</module>
+        <!--网关-->
+        <module>tiny-gateway</module>
 
-        <!--业务-->
-        <module>template-service-user</module>
+        <!--服务-->
+        <module>tiny-service-search</module>
+        <module>tiny-service-user</module>
+        <module>tiny-commons-service</module>
     </modules>
 
     <!--统一版本控制-->
@@ -46,6 +49,8 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
 
         <!-- Spring Cloud Settings -->
         <spring.cloud-version>Hoxton.SR9</spring.cloud-version>
@@ -57,14 +62,9 @@
 
         <canal.version>1.1.4</canal.version>
 
-        <!-- Swagger-ui Settings -->
-        <swagger.ui.version>2.9.2</swagger.ui.version>
-
-        <!-- Tools Settings -->
-        <hutool.all.version>5.5.4</hutool.all.version>
         <commons-dbutils.version>1.7</commons-dbutils.version>
+        <commons-pool2.version>2.9.0</commons-pool2.version>
     </properties>
-
 
     <!--统一一拉管理-->
     <dependencyManagement>
@@ -106,6 +106,18 @@
             </dependency>
             <!-- Spring Boot End -->
 
+            <!--Redis Begin-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
+            </dependency>
+            <!--Redis End-->
+
             <!--Canal Begin-->
             <dependency>
                 <groupId>com.alibaba.otter</groupId>
@@ -114,36 +126,11 @@
             </dependency>
             <!--Canal End-->
 
-            <!-- Swagger-ui Begin -->
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger.ui.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger.ui.version}</version>
-            </dependency>
-            <!-- Swagger-ui End -->
-
-            <!--Tools Begin-->
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>${hutool.all.version}</version>
-            </dependency>
             <!--dbutils-->
             <dependency>
                 <groupId>commons-dbutils</groupId>
                 <artifactId>commons-dbutils</artifactId>
                 <version>${commons-dbutils.version}</version>
-            </dependency>
-            <!--hibernate-->
-            <dependency>
-                <groupId>org.hibernate.validator</groupId>
-                <artifactId>hibernate-validator</artifactId>
-                <version>${hibernate-validator.version}</version>
             </dependency>
             <!--Tools End-->
         </dependencies>
@@ -225,46 +212,6 @@
             <releases>
                 <enabled>true</enabled>
             </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-
-        <repository>
-            <id>sonatype-repos</id>
-            <name>Sonatype Repository</name>
-            <url>https://oss.sonatype.org/content/groups/public</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>sonatype-repos-s</id>
-            <name>Sonatype Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-
-        <repository>
-            <id>spring-snapshots</id>
-            <name>Spring Snapshots</name>
-            <url>https://repo.spring.io/snapshot</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/milestone</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>

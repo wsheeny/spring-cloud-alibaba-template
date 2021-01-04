@@ -1,8 +1,0 @@
-logging:
-  level:
-    root: info
-    com.knox.template: debug
-
-mybatis-plus:
-  type-aliases-package: com.knox.template.commons.domain
-  mapper-locations: classpath*:mapper/*.xml
