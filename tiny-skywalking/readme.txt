@@ -11,4 +11,4 @@ SkyWalking探针配置
 
 方式一：java xx -xx.jar
 
-方式二：idea配置
+方式二：idea配置VM参数
