@@ -10,16 +10,24 @@
     </parent>
 
     <artifactId>tiny-service-user</artifactId>
-
-    <name>tiny-service-user</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
+    <description>用户服务模块</description>
 
     <dependencies>
+
+        <!--通用的业务逻辑-->
+        <dependency>
+            <groupId>com.tiny</groupId>
+            <artifactId>tiny-commons-service</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <!--安全组件-->
+        <dependency>
+            <groupId>com.tiny</groupId>
+            <artifactId>tiny-security</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
         <!-- Spring Boot Begin -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -28,6 +36,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -55,13 +67,6 @@
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
         <!-- Spring Cloud End -->
-
-        <!--通用的业务逻辑-->
-        <dependency>
-            <groupId>com.tiny</groupId>
-            <artifactId>tiny-commons-service</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
     </dependencies>
 
     <build>

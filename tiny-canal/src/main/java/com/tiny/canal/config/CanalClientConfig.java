@@ -22,7 +22,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * Canal客户端配置
  *
  * @author knox
- * @date 2020-12-18
+ * @since 2020-12-18
  */
 @Component
 public class CanalClientConfig {

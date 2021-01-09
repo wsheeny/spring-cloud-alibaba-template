@@ -1,7 +1,7 @@
 package com.tiny.service.search.controller;
 
 import com.tiny.commons.api.ApiResult;
-import com.tiny.entity.ums.TbUser;
+import com.tiny.entity.ums.UmsAdminUser;
 import com.tiny.service.search.service.IUserServiceClient;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -28,7 +28,7 @@ public class UserSearchController {
 
     @ApiOperation(value = "searchUser", notes = "获取用户数据")
     @GetMapping("/{id}")
-    public ApiResult<TbUser> searchUser(@PathVariable("id") String id) {
+    public ApiResult<UmsAdminUser> searchUser(@PathVariable("id") String id) {
         return iUserServiceClient.getUserById(id);
     }
 }

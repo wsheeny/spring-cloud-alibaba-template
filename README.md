@@ -24,6 +24,7 @@
 - `tiny-skywalking`：外部的链路追踪
 - `tiny-gateway`：路由网关统一访问接口
 - `tiny-service-search`：全文检索模块
+- `tiny-service-user`：用户服务模块
 
 ## 服务规划
 

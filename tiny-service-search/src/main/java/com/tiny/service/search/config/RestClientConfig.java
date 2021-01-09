@@ -14,7 +14,7 @@ import org.springframework.data.elasticsearch.config.AbstractElasticsearchConfig
  * #spring.data.elasticsearch.cluster-nodes=http://127.0.0.1:9300
  *
  * @author knox
- * @date 2020/12/2
+ * @since 2020/12/2
  */
 @Configuration
 public class RestClientConfig extends AbstractElasticsearchConfiguration {

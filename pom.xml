@@ -16,7 +16,26 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>spring-cloud-alibaba-template</name>
-    <description>统一的依赖管理</description>
+    <description>Spring-Cloud-Alibaba 微服务解决方案</description>
+
+    <modules>
+        <!--代码生成-->
+        <module>tiny-mbg</module>
+        <!--通用-->
+        <module>tiny-commons</module>
+        <module>tiny-commons-mapper</module>
+        <module>tiny-commons-entity</module>
+        <module>tiny-commons-service</module>
+        <!--canal增量更新-->
+        <module>tiny-canal</module>
+        <!--安全模块-->
+        <module>tiny-security</module>
+        <!--网关-->
+        <module>tiny-gateway</module>
+        <!--服务-->
+        <module>tiny-service-search</module>
+        <module>tiny-service-user</module>
+    </modules>
 
     <developers>
         <developer>
@@ -25,45 +44,23 @@
         </developer>
     </developers>
 
-    <modules>
-        <!--通用-->
-        <module>tiny-commons</module>
-        <module>tiny-commons-mapper</module>
-        <module>tiny-commons-entity</module>
-        <!--canal增量更新-->
-        <module>tiny-canal</module>
-        <!--代代码生成-->
-        <module>tiny-mbg</module>
-        <!--网关-->
-        <module>tiny-gateway</module>
-
-        <!--服务-->
-        <module>tiny-service-search</module>
-        <module>tiny-service-user</module>
-        <module>tiny-commons-service</module>
-    </modules>
-
     <!--统一版本控制-->
     <properties>
-        <!-- Environment Settings -->
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-
         <!-- Spring Cloud Settings -->
         <spring.cloud-version>Hoxton.SR9</spring.cloud-version>
         <spring.cloud.alibaba.version>2.2.3.RELEASE</spring.cloud.alibaba.version>
-
-        <!-- Spring Boot Settings -->
         <mysql.version>8.0.21</mysql.version>
         <mybatis.plus.version>3.4.1</mybatis.plus.version>
-
         <canal.version>1.1.4</canal.version>
-
+        <jjwt.version>0.9.0</jjwt.version>
         <commons-dbutils.version>1.7</commons-dbutils.version>
         <commons-pool2.version>2.9.0</commons-pool2.version>
+        <swagger.ui.version>2.9.2</swagger.ui.version>
+        <knife4j.version>3.0.2</knife4j.version>
+        <hutool.version>5.5.4</hutool.version>
     </properties>
 
     <!--统一一拉管理-->
@@ -120,7 +117,46 @@
                 <artifactId>commons-dbutils</artifactId>
                 <version>${commons-dbutils.version}</version>
             </dependency>
+            <!--集成druid连接池-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!--Hutool Java工具包-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
             <!--Tools End-->
+
+            <!--JWT(Json Web Token)登录支持-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <!-- Swagger-ui Begin -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.ui.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.ui.version}</version>
+            </dependency>
+            <!-- Swagger-ui End -->
+            <!--knife4j-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

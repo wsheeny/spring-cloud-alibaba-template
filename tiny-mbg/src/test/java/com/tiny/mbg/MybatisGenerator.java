@@ -158,7 +158,7 @@ public class MybatisGenerator {
         // RequestMapping注解
         strategyConfig.setControllerMappingHyphenStyle(true);
         // 表前缀
-        strategyConfig.setTablePrefix(packageConfig.getModuleName() + "_");
+        // strategyConfig.setTablePrefix(packageConfig.getModuleName() + "_");
 
         mpg.setStrategy(strategyConfig);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());

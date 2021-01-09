@@ -12,36 +12,20 @@
     <artifactId>tiny-commons</artifactId>
     <description>通用的工具类库</description>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-
-        <!-- Swagger-ui Settings -->
-        <swagger.ui.version>2.9.2</swagger.ui.version>
-
-        <!-- Tools Settings -->
-        <hutool.all.version>5.5.4</hutool.all.version>
-
-    </properties>
-
     <dependencies>
-
-        <!-- redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
-            <version>2.4.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
             <version>2.9.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-        </dependency>
-
         <!--Mybatis-Plus-->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -57,12 +41,10 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>${swagger.ui.version}</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>${swagger.ui.version}</version>
         </dependency>
         <!-- Swagger-ui End -->
 
@@ -74,20 +56,7 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>${hutool.all.version}</version>
         </dependency>
         <!--Tools End-->
-
-        <!--Jackson Begin-->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
-        <!--Jackson End-->
-
     </dependencies>
 </project>

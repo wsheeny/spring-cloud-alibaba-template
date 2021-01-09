@@ -1,7 +1,5 @@
 server:
   port: 9600
-  servlet:
-    context-path: /api/ums
 
 logging:
   level:
@@ -37,3 +35,23 @@ management:
     web:
       exposure:
         include: "*"
+
+secure:
+  ignored:
+    urls: #安全路径白名单
+      - /swagger-ui.html
+      - /swagger-resources/**
+      - /swagger/**
+      - /**/v2/api-docs
+      - /**/*.js
+      - /**/*.css
+      - /**/*.png
+      - /**/*.ico
+      - /webjars/springfox-swagger-ui/**
+      - /actuator/**
+      - /druid/**
+      - /user/login
+      - /user/register
+      - /user/info
+      - /user/logout
+      - /minio/upload

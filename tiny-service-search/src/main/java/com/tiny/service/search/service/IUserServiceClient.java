@@ -1,7 +1,7 @@
 package com.tiny.service.search.service;
 
 import com.tiny.commons.api.ApiResult;
-import com.tiny.entity.ums.TbUser;
+import com.tiny.entity.ums.UmsAdminUser;
 import com.tiny.service.search.config.MyFeignClientsConfiguration;
 import com.tiny.service.search.fallback.IUserServiceClientFallbackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -21,8 +21,8 @@ public interface IUserServiceClient {
      * 用户检索
      *
      * @param id 用户ID
-     * @return {@link TbUser}
+     * @return {@link UmsAdminUser}
      */
-    @RequestMapping(value = "api/ums/user/{id}", produces = "application/json;charset=UTF-8")
-    ApiResult<TbUser> getUserById(@PathVariable("id") String id);
+    @RequestMapping(value = "/user/{id}", produces = "application/json;charset=UTF-8")
+    ApiResult<UmsAdminUser> getUserById(@PathVariable("id") String id);
 }
