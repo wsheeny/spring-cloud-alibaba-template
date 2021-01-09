@@ -54,7 +54,7 @@
 |Redis|分布式缓存|https://redis.io/|
 |MyBatis    |ORM框架|http://www.mybatis.org/mybatis-3/zh/index.html|
 |MyBatis-Plus|Mybatis增强工具|https://mp.baomidou.com/|
-|MyBatis—Plus Generator|代码生成器|https://mp.baomidou.com/guide/generator.html|
+|MyBatis-Plus Generator|Mybatis代码生成器|https://mp.baomidou.com/guide/generator.html|
 |Elasticsearch|  搜索引擎    |https://github.com/elastic/elasticsearch|
 |~~RabbitMq~~ |消息队列|https://www.rabbitmq.com/|
 |~~Druid~~ --> HikariCP |高性能的 JDBC 连接池组件|https://github.com/brettwooldridge/HikariCP|
@@ -80,30 +80,33 @@
 
 ## 预览
 
-- Spring-Cloud-Gateway API网关
+- `SpringSecurity`授权认证中心
+  ![授权认证](./doc/springsecurity.png)
+
+- `Spring-Cloud-Gateway` `API`网关
   ![API网关](./doc/gateway.png)
 
-- Nacos服务注册发现：
+- `Nacos`服务注册发现：
 
-  - Nacos动态配置
+  - `Nacos-Config`动态配置
   ![Nacos配置](doc/nacos-config.png)
 
-  - Nacos服务注册
+  - `Nacos-Discovery`服务注册
   ![Nacos服务](doc/nacos-server.png)
     
 
-- Sentinel熔断机制
+- `Sentinel`熔断机制
   
-  `开启Sentinel支持feign：feign.sentinel.enabled=true`  
+  >开启Sentinel支持feign:`feign.sentinel.enabled=true`
 
-  - 关闭被调用服务
+  - 关闭被调用服务，服务访问失败
   ![关闭服务](./doc/service-user-closed.png)
-  - 再次访问
+  - 再次访问，服务访问失败，`Sentinel`生效
   ![再次调用用户服务](./doc/service-search-user.png)
 
 
-- Skywalking链路追踪:
-
+- `Skywalking`链路追踪:
+  > 自行配置探针
   - 仪表盘
   ![仪表盘](./doc/skywalking.png)
 
