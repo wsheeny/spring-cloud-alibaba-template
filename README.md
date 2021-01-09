@@ -1,16 +1,12 @@
 ## 介绍
 
-`Spring-cloud-alibaba-template` 是一套微服务脚手架，采用了 `Spring Cloud Hoxton` & `Spring Cloud Alibaba` 
-、`Spring Boot 2.3.5.RELEASE` 、`MyBatis`
-、`Elasticsearch` 等核心技术， 同时提供了基于 `Vue` 的管理后台方便快速搭建系统。
-在通用业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。
+本工程可作为微服务项目脚手架使用，采用了当下主流的 `Spring Cloud` & `Spring Cloud Alibaba` 微服务解决方案，在通用业务的基础集成了服务注册中心、配置中心、链路追踪、熔断器、权限认证等核心功能。同时提供了一套基于 `vue.js` & `vue-element-admin` 的后台管理系统。
+
 
 > NOTE：
 > 1. 项目使用`Spring Cloud Hoxton.SR9`版本 
 > 2. 官方支持`SpringBoot 2.3.5.RELEASE`
 > 3. 文档持续完善中
-
-## 技术组件
 
 ## 组织结构
 
@@ -61,7 +57,7 @@
 |~~OSS~~    |对象存储    |https://github.com/aliyun/aliyun-oss-java-sdk|
 |~~MinIO~~|对象存储    |https://github.com/minio/minio|
 |Lombok|简化对象封装工具    |https://github.com/rzwitserloot/lombok|
-|Seata|全局事务管理框架    |https://github.com/seata/seata|
+|~~Seata~~|全局事务管理框架    |https://github.com/seata/seata|
 |~~Portainer~~    |可视化Docker容器管理    |https://github.com/portainer/portainer|
 |Jenkins|持续集成(CI)工具|https://github.com/jenkinsci/jenkins|
 |Knife4j|文档生产工具|https://gitee.com/xiaoym/knife4j|
