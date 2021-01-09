@@ -6,6 +6,6 @@ package com.tiny.commons.service;
  * @author knox
  * @since 2020-12-19
  */
-public class BaseService {
+public class BaseService<T> {
 
 }

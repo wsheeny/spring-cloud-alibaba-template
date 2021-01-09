@@ -9,27 +9,27 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tiny-commons-mapper</artifactId>
-    <description>通用的数据访问</description>
+    <artifactId>tiny-commons-entity</artifactId>
+    <description>通用的领域模型</description>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+
+        <!--指定版本，防冲突 -->
+        <elasticsearch.version>7.10.0</elasticsearch.version>
     </properties>
 
     <dependencies>
-        <!-- Commons Begin -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
         </dependency>
-        <!-- Commons End -->
 
-        <!--领域模型-->
+        <!--通用依赖-->
         <dependency>
             <groupId>com.tiny</groupId>
-            <artifactId>tiny-commons-entity</artifactId>
+            <artifactId>tiny-commons</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>

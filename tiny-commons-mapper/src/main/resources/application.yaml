@@ -1,0 +1,3 @@
+#mybatis-plus:
+#  type-aliases-package: com.tiny.entity
+#  mapper-locations: classpath*:/mapper/**/*.xml

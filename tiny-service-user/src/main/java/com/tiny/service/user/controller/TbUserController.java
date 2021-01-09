@@ -1,7 +1,8 @@
 package com.tiny.service.user.controller;
 
-import com.tiny.commons.domain.TbUserEntity;
-import com.tiny.commons.mapper.TbUserMapper;
+import com.tiny.commons.api.ApiResult;
+import com.tiny.entity.ums.TbUser;
+import com.tiny.service.user.service.ITbUserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,18 +23,17 @@ import javax.annotation.Resource;
 public class TbUserController {
 
     @Resource
-    private TbUserMapper tbUserMapper;
+    private ITbUserService iTbUserService;
 
     /**
      * 根据 ID 测试查询用户信息
      *
-     * @param id
-     * @return
+     * @param id 用户ID
+     * @return {@link TbUser}
      */
     @GetMapping(value = {"{id}"})
-    public String reg(@PathVariable String id) {
-        TbUserEntity tbUser = tbUserMapper.selectById(id);
-        // int i = 1 / 0; 模拟 skywalking
-        return tbUser.getUsername();
+    public ApiResult<TbUser> reg(@PathVariable String id) {
+        TbUser dbUser = iTbUserService.getUserById(id);
+        return ApiResult.success(dbUser, "用户检索成功");
     }
 }

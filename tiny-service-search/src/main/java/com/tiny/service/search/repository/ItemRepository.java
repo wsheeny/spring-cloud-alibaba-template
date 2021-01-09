@@ -1,6 +1,6 @@
 package com.tiny.service.search.repository;
 
-import com.tiny.commons.domain.TbItemEntity;
+import com.tiny.entity.pms.TbItemEntity;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 /**

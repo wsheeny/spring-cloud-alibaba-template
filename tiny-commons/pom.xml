@@ -16,8 +16,6 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
 
-        <spring-data-redis.version>2.4.2</spring-data-redis.version>
-
         <!-- Swagger-ui Settings -->
         <swagger.ui.version>2.9.2</swagger.ui.version>
 
@@ -32,6 +30,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>2.4.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

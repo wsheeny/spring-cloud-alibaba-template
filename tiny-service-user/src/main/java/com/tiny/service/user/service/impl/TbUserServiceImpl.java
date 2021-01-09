@@ -1,8 +1,8 @@
 package com.tiny.service.user.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.tiny.commons.domain.TbUserEntity;
-import com.tiny.commons.mapper.TbUserMapper;
+import com.tiny.entity.ums.TbUser;
+import com.tiny.mapper.ums.TbUserMapper;
 import com.tiny.service.user.service.ITbUserService;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,10 @@ import org.springframework.stereotype.Service;
  * @since 2020-12-19
  */
 @Service
-public class TbUserServiceImpl extends ServiceImpl<TbUserMapper, TbUserEntity> implements ITbUserService {
+public class TbUserServiceImpl extends ServiceImpl<TbUserMapper, TbUser> implements ITbUserService {
 
+    @Override
+    public TbUser getUserById(String id) {
+        return baseMapper.getUserById(id);
+    }
 }

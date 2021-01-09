@@ -29,7 +29,7 @@
         <!--通用-->
         <module>tiny-commons</module>
         <module>tiny-commons-mapper</module>
-        <module>tiny-commons-domain</module>
+        <module>tiny-commons-entity</module>
         <!--canal增量更新-->
         <module>tiny-canal</module>
         <!--代代码生成-->
@@ -105,18 +105,6 @@
                 <version>${mybatis.plus.version}</version>
             </dependency>
             <!-- Spring Boot End -->
-
-            <!--Redis Begin-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-redis</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-pool2</artifactId>
-                <version>${commons-pool2.version}</version>
-            </dependency>
-            <!--Redis End-->
 
             <!--Canal Begin-->
             <dependency>

@@ -10,9 +10,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  *
  * @author knox
  */
-@EnableDiscoveryClient
+@EnableDiscoveryClient // 服务注册
 @SpringBootApplication(scanBasePackages = "com.tiny")
-@MapperScan(basePackages = "com.tiny.commons.mapper")
+@MapperScan(basePackages = "com.tiny.mapper")
 public class ServiceUserApplication {
 
     public static void main(String[] args) {

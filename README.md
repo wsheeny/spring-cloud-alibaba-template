@@ -1,6 +1,6 @@
 ## 介绍
 
-`Spring-cloud-alibaba-template` 是一套微服务脚手架，采用了 `Spring Cloud Hoxton` & `Alibaba` 
+`Spring-cloud-alibaba-template` 是一套微服务脚手架，采用了 `Spring Cloud Hoxton` & `Spring Cloud Alibaba` 
 、`Spring Boot 2.3.5.RELEASE` 、`MyBatis`
 、`Elasticsearch` 等核心技术， 同时提供了基于 `Vue` 的管理后台方便快速搭建系统。
 在通用业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。
@@ -8,12 +8,24 @@
 > NOTE：
 > 1. 项目使用`Spring Cloud Hoxton.SR9`版本 
 > 2. 官方支持`SpringBoot 2.3.5.RELEASE`
+> 3. 文档持续完善中
+
+## 技术组件
+
+|组件|说明|官方地址|
+|---|---|---|
+|Spring Boot|Pivotal团队提供的全新框架|https://spring.io/projects/spring-boot|
+|Spring Cloud|Spring官方提供的微服务解决方案|https://spring.io/projects/spring-cloud/|
+|Spring Cloud Alibaba Nacos Config|外部化配置组件|https://nacos.io/|
+|Spring Cloud Alibaba Nacos Discovery|服务注册发现组件|https://nacos.io/|
+|Spring Cloud Alibaba Sentinel|高可用流控防护组件|https://github.com/alibaba/Sentinel|
+|……|……|……|
 
 ## 组织结构
 
 - ~~tiny-dependencies~~：统一的依赖管理
 - `tiny-commons`：通用的工具类库
-- `tiny-commons-domain`：通用的领域模型
+- `tiny-commons-entity`：通用的领域模型
 - `tiny-commons-mapper`：通用的数据访问
 - `tiny-commons-service`：通用的业务逻辑
 - `tiny-generator`：通用的代码生成
@@ -26,8 +38,8 @@
 |服务|端口|说明|
 |---|---|---|
 |tiny-gateway       |9000|路由网关统一访问接口|
-|tiny-search        |9502|全文检索|
-|tiny-service-user  |9501|用户相关服务|
+|tiny-search        |9500|全文检索|
+|tiny-service-user  |9600|用户相关服务|
 |···|···|···|
 
 ## 项目演示
@@ -83,6 +95,17 @@
 
   - Nacos服务注册
   ![Nacos服务](doc/nacos-server.png)
+    
+
+- Sentinel熔断机制
+  
+  `开启Sentinel支持feign：feign.sentinel.enabled=true`  
+
+  - 关闭被调用服务
+  ![关闭服务](./doc/service-user-closed.png)
+  - 再次访问
+  ![再次调用用户服务](./doc/service-search-user.png)
+
 
 - Skywalking链路追踪:
 
