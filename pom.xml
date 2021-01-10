@@ -58,7 +58,7 @@
         <jjwt.version>0.9.0</jjwt.version>
         <commons-dbutils.version>1.7</commons-dbutils.version>
         <commons-pool2.version>2.9.0</commons-pool2.version>
-        <swagger.ui.version>2.9.2</swagger.ui.version>
+        <swagger.ui.version>3.0.0</swagger.ui.version>
         <knife4j.version>3.0.2</knife4j.version>
         <hutool.version>5.5.4</hutool.version>
     </properties>
